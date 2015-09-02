@@ -20,7 +20,9 @@
 <body>
   <h1>Top 100 Albums of All Time</h1>
   <h2>At least, according to someone.</h2>
-  <?php include 
+
+<?php include ("buttonmenu.php"); ?> 
+
 <pre>
 Sgt. Pepper's Lonely Hearts Club Band, 1967
 Are You Experienced?, 1967
