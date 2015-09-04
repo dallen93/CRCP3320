@@ -502,5 +502,5 @@
     <td>1988</td>
   </tr>
 </table>
-  </body>
-</html>
+ 
+<? include ("footer.php") ?>
