@@ -100,6 +100,5 @@ A Love Supreme, 1965
 Marquee Moon, 1977
 Eat a Peach, 1972
 Daydream Nation, 1988
-</pre>
-</body>
-</html>
+
+<? include ("footer.php") ?>
