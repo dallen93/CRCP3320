@@ -26,4 +26,3 @@
     <input type="button" value="Title" onclick="location.href='title.php'" />
     <input type="button" value="Year" onclick="location.href='year.php'" />
   </form>
-  <pre>
