@@ -1,5 +1,5 @@
 <? include ("header.php") ?>
-
+<pre>
 Sgt. Pepper's Lonely Hearts Club Band, 1967
 Are You Experienced?, 1967
 Abbey Road, 1969
@@ -100,5 +100,5 @@ A Love Supreme, 1965
 Marquee Moon, 1977
 Eat a Peach, 1972
 Daydream Nation, 1988
-
+</pre>
 <? include ("footer.php") ?>
