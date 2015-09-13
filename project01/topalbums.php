@@ -21,12 +21,12 @@
   <h1>Top 100 Albums of All Time</h1>
   <h2>At least, according to someone.</h2>
   <form>
-    <select>
-      <option selected>Rank</option>
-      <option>Title</option>
-      <option>Year</option>
+    <select name="sortOrder">
+      <option value="rank">Rank</option>
+      <option value="title">Title</option>
+      <option value="year">Year</option>
     </select>
-    <button>Submit</button>
+    <input type="submit" value="Sort!"/>
   </form>
   
 <table>
