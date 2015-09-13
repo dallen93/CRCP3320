@@ -47,14 +47,14 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT * FROM albums ORDER BY rank";
+$sql = "SELECT * FROM albums ORDER BY rank;";
 
 $result = $conn->query($sql);
 while($row = $result->fetch_assoc()) {
     echo "<tr>\n" . "\t<td>" . $row["rank"] . "</td>\n<td>" . $row["title"]. "</td>\n<td>" . $row["year"]. "</td>\n</tr>\n";
 }
 $conn->close();
-
+?>
 </table>
 </body>
 </html>
