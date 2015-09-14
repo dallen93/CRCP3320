@@ -24,15 +24,15 @@ if ($sortOrder == NULL || $sortOrder == "") {
   <script>
   function replaceList() {
     var xhr = new XMLHttpRequest();
-  //  alert('hi');
-    xhr.onREadyStateChange = function() {
-    if (xhr.readyState == 4 && xhr.status == 200) {
-      document.getElementById("???").innerHTML = xhr.responseText;
+    //alert('hi');
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        document.getElementById("albums").innerHTML = xhr.responseText;
+      }
     }
-  }
     xhr.open("POST", "http://dallen03.humanoriented.com/albumTable.php", true);
-    xhr.setRequestHeader("Content-Type", "applicatoin/x-www-form-urlencoded; charset=UTF-8");
-    var sortOrder = document.getElementById("myIDFORSELECT").value;
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+    var sortOrder = document.getElementById("sortOrder").value;
     xhr.send("sortOrder=" + sortOrder);
   }
   </script>
@@ -43,7 +43,7 @@ if ($sortOrder == NULL || $sortOrder == "") {
   <h2>At least, according to someone.</h2>
   <form action="topalbums.php" method="POST">
     Order by
-    <select name="sortOrder">
+    <select id="sortOrder" name="sortOrder">
       <option <? if ($sortOrder == "rank") { ?>selected="selected"<? } ?>value="rank">Rank</option>
       <option <? if ($sortOrder == "title") { ?>selected="selected"<? } ?> value="title">Title</option>
       <option <? if ($sortOrder == "year") { ?>selected="selected"<? } ?> value="year">Year</option>
