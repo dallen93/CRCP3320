@@ -46,9 +46,11 @@ $dbname = "crcp3320";
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-} 
+}
 
-$sql = "SELECT * FROM albums ORDER BY rank;";
+$sortOrder = $_GET["sortOrder"]; 
+
+$sql = "SELECT * FROM albums ORDER BY " . $sortOrder;
 
 $result = $conn->query($sql);
 while($row = $result->fetch_assoc()) {
