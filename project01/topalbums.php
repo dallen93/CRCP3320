@@ -20,7 +20,8 @@
 <body>
   <h1>Top 100 Albums of All Time</h1>
   <h2>At least, according to someone.</h2>
-  <form>
+  <form action="topalbums.php" method="GET">
+    Order by
     <select name="sortOrder">
       <option value="rank">Rank</option>
       <option value="title">Title</option>
