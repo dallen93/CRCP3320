@@ -1,3 +1,9 @@
+<?
+$sortOrder = $_POST["sortOrder"];
+if ($sortOrder == NULL || $sortOrder == "") {
+  $sortOrder = "rank";
+} 
+?>
 <html>
 <head>
   <title>Top 100 Albums of All Time</title>
@@ -20,12 +26,12 @@
 <body>
   <h1>Top 100 Albums of All Time</h1>
   <h2>At least, according to someone.</h2>
-  <form action="topalbums.php" method="GET">
+  <form action="topalbums.php" method="POST">
     Order by
     <select name="sortOrder">
-      <option value="rank">Rank</option>
-      <option value="title">Title</option>
-      <option value="year">Year</option>
+      <option <? if ($sortOrder == "rank") { ?>selected="selected"<? } ?>value="rank">Rank</option>
+      <option <? if ($sortOrder == "title") { ?>selected="selected"<? } ?> value="title">Title</option>
+      <option <? if ($sortOrder == "year") { ?>selected="selected"<? } ?> value="year">Year</option>
     </select>
     <input type="submit" value="Sort!"/>
   </form>
@@ -47,8 +53,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
-$sortOrder = $_GET["sortOrder"]; 
 
 $sql = "SELECT * FROM albums ORDER BY " . $sortOrder;
 
