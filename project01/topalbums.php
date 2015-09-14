@@ -21,6 +21,21 @@ if ($sortOrder == NULL || $sortOrder == "") {
       color: #EE98FF;
     }
   </style>
+  <script>
+  function replaceList() {
+    var xhr = new XMLHttpRequest();
+  //  alert('hi');
+    xhr.onREadyStateChange = function() {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      document.getElementById("???").innerHTML = xhr.responseText;
+    }
+  }
+    xhr.open("POST", "http://dallen03.humanoriented.com/albumTable.php", true);
+    xhr.setRequestHeader("Content-Type", "applicatoin/x-www-form-urlencoded; charset=UTF-8");
+    var sortOrder = document.getElementById("myIDFORSELECT").value;
+    xhr.send("sortOrder=" + sortOrder);
+  }
+  </script>
 </head>
 
 <body>
@@ -33,9 +48,10 @@ if ($sortOrder == NULL || $sortOrder == "") {
       <option <? if ($sortOrder == "title") { ?>selected="selected"<? } ?> value="title">Title</option>
       <option <? if ($sortOrder == "year") { ?>selected="selected"<? } ?> value="year">Year</option>
     </select>
-    <input type="submit" value="Sort!"/>
+    <input type="submit" value="Sort!" onclick="replaceList(); return false;" />
   </form>
   
+  <div id="albums">
 <table>
   <thead>
     <tr>
@@ -63,5 +79,6 @@ while($row = $result->fetch_assoc()) {
 $conn->close();
 ?>
 </table>
+</div>
 </body>
 </html>
